@@ -1,6 +1,13 @@
 # Leksika
 Word search game in Latvian for Android OS
 
+##Features
+This fork is different from Healeys and Serwylos versions as the classes related to dictionary build and search are rewritten.
+Original dictionary build and search supported only 26 letters. Many changes were needed to  support more than 32 characters so eventually
+I rewrote original Trie and dictionary related classes to use DAWG (see Credits). In theory
+(only Latvian characters tested) the new dictionary supports all UTF-8 letters
+and still is reasonably small and fast (1,4 mil Latvian words take 840K, read dictionary and solve 5x5 board takes less than 100ms)
+
 ##Reporting Issues
 Please report any issues or suggest features on the [issue tracker](https://github.com/gatis/leksika/issues)  
 
