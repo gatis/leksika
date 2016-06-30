@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Leksika</string>
+
+    <string name="new_game">Jauna spēle</string>
+    <string name="restore_game">Turpināt spēli</string>
+	<string name="prefs">Iestatījumi</string>
+
+	<string name="pref_dict">Vārdnīca</string>
+	<string name="pref_dict_summary">Izvēlēties vārdnīcu</string>
+	<string name="pref_dict_dialog">Izvēlēties vārdnīcu</string>
+	<string name="pref_dict_us">Vārdnīca 1</string>
+	<string name="pref_dict_uk">Vārdnīca 2</string>
+
+	<string name="pref_boardSize">Laukums</string>
+	<string name="pref_boardSize_summary">Laukuma izmērs</string>
+	<string name="pref_boardSize_dialog">Laukuma izmērs</string>
+
+	<string name="pref_timeLimit">Laika ierobežojums</string>
+	<string name="pref_timeLimit_summary">Laika ierobežojums</string>
+	<string name="pref_timeLimit_dialog">Laika ierobežojums</string>
+	<string name="time_3m">3 minūtes</string>
+	<string name="time_5m">5 minūtes</string>
+	<string name="time_10m">10 minūtes</string>
+	<string name="time_20m">20 minūtes</string>
+	<string name="time_30m">30 minūtes</string>
+
+	<string name="pref_sounds">Ar skaņām</string>
+	<string name="pref_sounds_summary">Vai ieslēgt skaņu efektus</string>
+
+	<string name="dialog_no_saved">Spēle nav saglabāta.  Ja tu šo lasi,
+	kaut kas ir nogājis greizi</string>
+	<string name="dialog_ok">Labi</string>
+	<string name="dialog_cancel">Atcelt</string>
+
+	<string name="dialog_about_title">Par spēli Leksika</string>
+	<string name="dialog_about_content">
+	Pieskaries ekrānam un velc pirkstu uz blakus kvadrātiem, lai rakstītu vārdus.
+	Mērķis ir ierobežotā laika posmā atrast pēc iespējas vairāk vārdu.
+
+	\n\nPunktu skaitīšana:
+	\nVārdos jābūt vismaz 2 burtiem.
+	3 un 4 burtus gari vārdi dod vienu punktu.  Garāki vārdi
+	dod vairāk punktus. Spēles vārdnīca var nebūt pilnīga, mums žēl
+	ja par kādu skaistu vārdu netika ieskaitīts punkts.\n\n
+	</string>
+
+	<string name="menu_rotate_board">Pagriezt laukumu</string>
+	<string name="menu_save_game">Saglabāt spēli</string>
+	<string name="menu_end_game">Beigt spēli</string>
+	<string name="button_ok">Labi</string>
+
+	<string name="about">Par spēli</string>
+
+	<string name="show_missed">Rādit neatrastos vārdus</string>
+	<string name="hide_missed">Slēpt neatrastos vārdus</string>
+
+	<string name="show_unique">Rādīt unikālos vārdus</string>
+	<string name="hide_unique">Slēpt unikālos vārdus</string>
+
+	<string name="view_word"><u>Skatīt</u></string>
+	<string name="define_word"><u>Meklēt</u> </string>
+
+	<string name="words">VĀRDI</string>
+	<string name="found_words">Atrasti</string>
+	<string name="missed_words">Neatrasti</string>
+	<string name="total_words">Kopā vārdi:</string>
+	<string name="total_score">Kopā punkti:</string>
+	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+</resources>
