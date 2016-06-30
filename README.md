@@ -11,8 +11,11 @@ Please report any issues or suggest features on the [issue tracker](https://gith
 [Susumu Yata:](https://github.com/stil/dawgdic) Library for building and accessing dictionaries implemented with directed acyclic word graphs (DAWG)  
 [Mangesh Hambarde:](https://github.com/stil/dawgdic) Java interface for accessing directed acyclic word graphs (DAWG)  
 [Code, ideas:](http://stackoverflow.com/questions/746082/how-to-find-list-of-possible-words-from-a-letter-matrix-boggle-solver) and [resources for solving boggle boards:](http://www.gtoal.com/wordgames/boggle.html)  
-http://www.tezaurs.lv/
+[Andrejs Spektors, Mākslīgā intelekta laboratorija - tezaurs.lv](http://www.tezaurs.lv/)
+
+## Special thanks
+[Maira] - for beta testing, feedback and food
 
 ## Notes
-http://www.tezaurs.lv/ is not related with this app in any way. The links to http://www.tezaurs.lv/ are added just to enable look-up of meaning of particular word. Sometimes links work (word is in their dicionary) and sometimes they do not. Source of latvian words dictionary is Dicollecte(lv) open source language resource ('openoffice spellchecker' in laymans terms). Spellchecker dictionary may not be the best source for words but was the most complete i could find in the wild. The compressed dictionary contains 1459243 words and word-forms at this point (all presumably known Latvian words with length from 2 to 12 characters).  
+http://www.tezaurs.lv/ is not related with this app in any way. The links to http://www.tezaurs.lv/ are added just to enable look-up of meaning of particular word. Sometimes links work (word is in their dicionary) and sometimes they do not - look also for similar words as they may be inflected. Source of latvian words dictionary is Dicollecte(lv) open source language resource ('openoffice spellchecker' in laymans terms). Spellchecker dictionary may not be the best source for words but was the most complete i could find in the wild. The compressed dictionary contains 1459243 words and word-forms at this point (all presumably known Latvian words with length from 2 to 12 characters).
 Have fun!
