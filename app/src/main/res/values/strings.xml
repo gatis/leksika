@@ -19,6 +19,7 @@
 	<string name="pref_timeLimit">Laika ierobežojums</string>
 	<string name="pref_timeLimit_summary">Laika ierobežojums</string>
 	<string name="pref_timeLimit_dialog">Laika ierobežojums</string>
+	<string name="time_1m">1 minūte</string>
 	<string name="time_3m">3 minūtes</string>
 	<string name="time_5m">5 minūtes</string>
 	<string name="time_10m">10 minūtes</string>
@@ -67,4 +68,8 @@
 	<string name="total_words">Kopā vārdi:</string>
 	<string name="total_score">Kopā punkti:</string>
 	<string name="value_max_percentage">%1$d/%2$d (%3$d%%)</string>
+	<string name="top_scores">Sasniegumi</string>
+	<string name="new_topscore_title">Jauns sasniegums</string>
+	<string name="topscorer_name">Vārds</string>
+	<string name="value_board_dimensions">%1$dx%2$d</string>
 </resources>

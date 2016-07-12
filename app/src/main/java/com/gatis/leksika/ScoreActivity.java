@@ -17,29 +17,35 @@
 
 package com.gatis.leksika;
 
+import android.app.AlertDialog;
 import android.app.TabActivity;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.text.InputType;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.gatis.leksika.game.Game;
+import com.gatis.leksika.topscores.TopSettings;
 import com.gatis.leksika.view.BoardView;
-//import net.healeys.trie.Trie;
 
 import java.util.Iterator;
 import java.util.Set;
 
-//import com.serwylo.lexica.R;
 
 import gtrie.BuildTrie;
 
@@ -53,6 +59,8 @@ public class ScoreActivity extends TabActivity {
 	private Game game;
 	private BoardView bv;
 	private View highlighted;
+	private int words;
+	private int max_words;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -84,8 +92,8 @@ public class ScoreActivity extends TabActivity {
 
 		int score = 0;
 		int max_score;
-		int words = 0;
-		int max_words = possible.size();
+		words = 0;
+		max_words = possible.size();
 
 		Iterator<String> li = game.uniqueListIterator();
 		while(li.hasNext()) {
@@ -133,6 +141,19 @@ public class ScoreActivity extends TabActivity {
 				finish();
 			}
 		});
+
+        // define board to use as id for topScore settings
+
+        board_id = getString(R.string.value_board_dimensions,
+                game.getBoard().getWidth(),game.getBoard().getWidth());
+
+        if (topSettings == null) {
+            topSettings = new TopSettings(this,board_id);
+        }
+
+        if (topSettings.isTopScore(words, max_words)){
+            PromptTopName(game.getPlayerName());
+        }
 
 	}
 
@@ -305,6 +326,65 @@ public class ScoreActivity extends TabActivity {
 			startActivity(i);
 		}
 	}
+
+	private String m_Text = "";
+    private String board_id ="";
+	TopSettings topSettings;
+
+	private void CreateTopEntry(String uName){
+
+		board_id = getString(R.string.value_board_dimensions,
+                game.getBoard().getWidth(),game.getBoard().getWidth());
+
+		Integer score_got = words;
+		Integer score_possible = max_words;
+
+		if (topSettings == null) {
+			topSettings = new TopSettings(this,board_id);
+		}
+
+		topSettings.putTopSetting(board_id, uName, score_got, score_possible);
+	}
+
+	private void PromptTopName(String playerName){
+
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle(R.string.new_topscore_title);
+
+		// Set up the input
+		final EditText input = new EditText(this);
+        input.setText(playerName);
+		input.setHint(R.string.topscorer_name);
+
+        final String pn = playerName;
+
+		// Specify the type of input expected;
+		input.setInputType(InputType.TYPE_CLASS_TEXT);
+		builder.setView(input);
+
+		// Set up the buttons
+		builder.setPositiveButton(R.string.button_ok, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				m_Text = input.getText().toString();
+
+                if (pn != m_Text)
+                    game.setPlayerName(m_Text);
+
+				CreateTopEntry(m_Text);
+			}
+		});
+		builder.setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.cancel();
+			}
+		});
+
+		builder.show();
+
+	}
+
 
 }
 

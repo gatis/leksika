@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.healeys.trie;
+package gtrie;
 
 /**
  * An abstract filter used to identify whether a particular string is a word.

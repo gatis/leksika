@@ -17,10 +17,9 @@
 
 package com.gatis.leksika.game;
 
-import net.healeys.trie.TransitionMap;
-import net.healeys.trie.Trie;
+import gtrie.Dawg;
 
-public abstract class Board implements TransitionMap {
+public abstract class Board {
 	private String[] board;
 
 	public Board(String[] b) {
@@ -36,7 +35,8 @@ public abstract class Board implements TransitionMap {
 	}
 
 	public synchronized int valueAt(int i) {
-		return Trie.charToOffset(board[i].charAt(0));
+		return Dawg.charToOffset(board[i].charAt(0));
+
 	}
 
 	public synchronized String toString() {

@@ -2,7 +2,7 @@
 Word search game in Latvian for Android OS
 
 ##Features
-This fork is different from Healeys and Serwylos versions as the classes related to dictionary build and search are rewritten.
+This fork is different from Healeys and Serwylos versions as the classes related to dictionary build and search are replaced.
 Original dictionary build and search supported only 26 letters. Many changes were needed to  support more than 32 characters so eventually
 I rewrote original Trie and dictionary related classes to use DAWG (see Credits). In theory
 (only Latvian characters tested) the new dictionary supports all UTF-8 letters
@@ -21,8 +21,9 @@ Please report any issues or suggest features on the [issue tracker](https://gith
 [Andrejs Spektors, Mākslīgā intelekta laboratorija - tezaurs.lv](http://www.tezaurs.lv/)
 
 ## Special thanks
-[Maira] - for beta testing, feedback and food
+Maira - for beta testing, feedback and food
 
 ## Notes
+You can download the App in [Google Play store](https://code.google.com/archive/p/lexic/):  https://play.google.com/store/apps/details?id=com.gatis.leksika
 http://www.tezaurs.lv/ is not related with this app in any way. The links to http://www.tezaurs.lv/ are added just to enable look-up of meaning of particular word. Sometimes links work (word is in their dicionary) and sometimes they do not - look also for similar words as they may be inflected. Source of latvian words dictionary is Dicollecte(lv) open source language resource ('openoffice spellchecker' in laymans terms). Spellchecker dictionary may not be the best source for words but was the most complete i could find in the wild. The compressed dictionary contains 1459243 words and word-forms at this point (all presumably known Latvian words with length from 2 to 12 characters).
 Have fun!

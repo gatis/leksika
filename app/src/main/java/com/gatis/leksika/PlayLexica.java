@@ -19,6 +19,7 @@ package com.gatis.leksika;
 
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -57,10 +58,10 @@ public class PlayLexica extends AppCompatActivity implements Synchronizer.Finali
 		try {
 			String action = getIntent().getAction();
 			switch (action) {
-				case "com.serwylo.lexica.action.RESTORE_GAME":
+				case "com.gatis.leksika.action.RESTORE_GAME":
 					restoreGame();
 					break;
-				case "com.serwylo.lexica.action.NEW_GAME":
+				case "com.gatis.leksika.action.NEW_GAME":
 					newGame();
 					break;
 			}
@@ -209,7 +210,7 @@ public class PlayLexica extends AppCompatActivity implements Synchronizer.Finali
 		Bundle bun = new Bundle();
 		game.save(new GameSaverTransient(bun));
 
-		Intent scoreIntent = new Intent("com.serwylo.lexica.action.SCORE");
+		Intent scoreIntent = new Intent("com.gatis.leksika.action.SCORE");
 		scoreIntent.putExtras(bun);
 
 		startActivity(scoreIntent);

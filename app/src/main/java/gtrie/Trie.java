@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package net.healeys.trie;
+package gtrie;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.ByteArrayOutputStream;
 import java.util.LinkedHashMap;
 
 /**

@@ -59,7 +59,7 @@
 
 		<Button android:id="@+id/close_score"
 			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
+			android:layout_height="@android:dimen/app_icon_size"
 			android:text="@string/button_ok"
 			/>
 	
@@ -99,7 +99,7 @@
 
 		<Button android:id="@+id/missed_close_score"
 			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
+			android:layout_height="@android:dimen/app_icon_size"
 			android:text="@string/button_ok"
 			/>
 	

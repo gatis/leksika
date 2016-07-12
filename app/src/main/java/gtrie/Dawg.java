@@ -35,6 +35,13 @@ public class Dawg {
 
     }
 
+// TODO : rework as all LV unicode chars return -1
+    public static int charToOffset(char character) {
+        if(character >= 'a' && character <= 'z') return character - 'a';
+        if(character >= 'A' && character <= 'Z') return character - 'A';
+        return -1;
+    }
+
     public Dawg(InputStream inputfile) throws IOException {
 
         try

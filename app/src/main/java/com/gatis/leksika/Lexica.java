@@ -52,7 +52,7 @@ public class Lexica extends Activity {
 		// Log.d(TAG,"b="+b);
 		b.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				startActivity(new Intent("com.serwylo.lexica.action.NEW_GAME"));
+				startActivity(new Intent("com.gatis.leksika.action.NEW_GAME"));
 			}
 		});
 
@@ -63,7 +63,7 @@ public class Lexica extends Activity {
 					if(savedGame()) {
 						// Log.d(TAG,"restoring game");
 						startActivity(new 
-							Intent("com.serwylo.lexica.action.RESTORE_GAME"));
+							Intent("com.gatis.leksika.action.RESTORE_GAME"));
 					} else {
 						// Log.d(TAG,"no saved game :(");
 						showDialog(DIALOG_NO_SAVED);
@@ -87,7 +87,15 @@ public class Lexica extends Activity {
 		b.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				startActivity(new 
-					Intent("com.serwylo.lexica.action.CONFIGURE"));
+					Intent("com.gatis.leksika.action.CONFIGURE"));
+			}
+		});
+
+		b = (Button) findViewById(R.id.topscores);
+		b.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				startActivity(new
+						Intent("com.gatis.leksika.topscores"));
 			}
 		});
 	}

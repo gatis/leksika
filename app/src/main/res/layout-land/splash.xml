@@ -19,13 +19,13 @@
 		>
 		<Button android:id="@+id/new_game"
 			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
+			android:layout_height="@android:dimen/app_icon_size"
 			android:text="@string/new_game"
 			android:layout_weight="1"
 			/>
 		<Button android:id="@+id/restore_game"
 			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
+			android:layout_height="@android:dimen/app_icon_size"
 			android:text="@string/restore_game"
 			android:enabled="false"
 			android:clickable="false"
@@ -37,17 +37,23 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		>
-			<Button android:id="@+id/preferences"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:text="@string/prefs"
-				android:layout_weight="1"
-				/>
-			<Button android:id="@+id/about"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:text="@string/about"
-				android:layout_weight="1"
+		<Button android:id="@+id/preferences"
+			android:layout_width="fill_parent"
+			android:layout_height="@android:dimen/app_icon_size"
+			android:text="@string/prefs"
+			android:layout_weight="1"
+			/>
+		<Button android:id="@+id/topscores"
+			android:layout_width="fill_parent"
+			android:layout_height="@android:dimen/app_icon_size"
+			android:text="@string/top_scores"
+			android:layout_weight="1"
+			/>
+		<Button android:id="@+id/about"
+			android:layout_width="fill_parent"
+			android:layout_height="@android:dimen/app_icon_size"
+			android:text="@string/about"
+			android:layout_weight="1"
 			/>
 	</LinearLayout>
 

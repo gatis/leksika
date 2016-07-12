@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package net.healeys.trie;
+package gtrie;
 
 /**
  * The TransitionMap is an abstract representation of a game board.

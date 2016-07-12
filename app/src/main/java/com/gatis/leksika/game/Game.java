@@ -28,11 +28,6 @@ import android.util.Log;
 import com.gatis.leksika.GameSaver;
 import com.gatis.leksika.R;
 import com.gatis.leksika.Synchronizer;
-//import com.serwylo.lexica.trie.util.TrieBuilder;
-
-import net.healeys.trie.CompressedTrie;
-import net.healeys.trie.Trie;
-//import net.healeys.trie.WordFilter;
 
 import java.io.IOException;
 import java.util.Date;
@@ -58,8 +53,8 @@ public class Game implements Synchronizer.Counter {
 
 	public static final int WORD_POINTS[] = {
 		0,0,1, // 0,1,2
-		1,1,2, // 3,4,5
-		3,5,8, // 6,7,8
+		1,2,3, // 3,4,5
+		4,5,8, // 6,7,8
 		13,21,34, // 9,10,11
 		55,89,144, // 12,13,14
 		233,377,610, //14,15,16
@@ -82,12 +77,14 @@ public class Game implements Synchronizer.Counter {
 	private boolean ukDict;
 	private int boardSize; // using an int so I can use much larger boards later
 	private int minWordLength;
+	private String playerName;
 
 	private LinkedHashMap<String,BuildTrie.Solution> solutions;
 
 	private AudioManager mgr;
 	private SoundPool mSoundPool;
 	private int[] soundIds;
+    private SharedPreferences prefs;
 
 	public Game(Context c, GameSaver saver) {
 
@@ -189,7 +186,7 @@ public class Game implements Synchronizer.Counter {
 	}
 
 	private void loadPreferences(Context c) {
-		SharedPreferences prefs = 
+		 prefs =
 			PreferenceManager.getDefaultSharedPreferences(c);
 
 		if(prefs.getString("dict","US").equals("UK")) {
@@ -213,6 +210,8 @@ public class Game implements Synchronizer.Counter {
 		maxTimeRemaining = 100 * Integer.parseInt(
 			prefs.getString("maxTimeRemaining","180"));
 
+		playerName = prefs.getString("playerName","");
+
 		if(prefs.getBoolean("soundsEnabled",false)) {
 			initSoundPool(c);
 		}
@@ -224,9 +223,6 @@ public class Game implements Synchronizer.Counter {
 
 	private void initializeDictionary(boolean usDict, boolean ukDict) {
 		// Log.d(TAG,"initializeDictionary");
-		int mask = 0;
-		int neighborMasks[] = new int[26];
-		CompressedTrie dict;
 		BuildTrie bt;
 		String[] btArgs = new String[1];
 		btArgs[0] = "";
@@ -234,35 +230,14 @@ public class Game implements Synchronizer.Counter {
 		String boardChars = "";
 
 		for(int i=0;i<board.getSize();i++) {
-			int ival = Trie.charToOffset(board.elementAt(i).charAt(0));
 			boardChars = boardChars + (board.elementAt(i).charAt(0));
-			/*
-			mask |= 1<<ival;
-			for(int j=0;j<board.getSize();j++) {
-				if((board.transitions(i)&(1<<j))!= 0) {
-					neighborMasks[ival] |= 1<<Trie.charToOffset(board.elementAt(j).
-							charAt(0));
-				}
-			}
-			*/
 		}
 
 		try {
 
 			bt = new BuildTrie(context.getResources().openRawResource(R.raw.lexlv));
-			//System.out.println(boardChars);
 			solutions = bt.SolveBoggle(boardChars);
-			/*
-			dict = new CompressedTrie(context.getResources().
-				openRawResource(R.raw.words),mask,neighborMasks,
-				usDict,ukDict);
 
-			solutions = dict.solver(board,new WordFilter() {
-				public boolean isWord(String w) {
-					return w.length() >= minWordLength;
-				}
-			});
-			*/
 
 		} catch(IOException e) {
 			// Log.e(TAG,"initializeDictionary",e);
@@ -328,6 +303,17 @@ public class Game implements Synchronizer.Counter {
 	
 	public int getWordCount() {
 		return wordCount;
+	}
+
+	public String getPlayerName() {
+		return playerName;
+	}
+
+	public void setPlayerName(String p) {
+
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("playerName", p);
+        editor.commit();
 	}
 
 	public int getMaxWordCount() {
